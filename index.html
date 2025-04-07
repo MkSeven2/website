@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Anime Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">AnimeHub</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for anime..." aria-label="Search for anime">
+                <button id="searchButton" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7s-7 3.132-7 7 3.133 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main container">
+        <section id="searchResults" class="results-grid" aria-live="polite">
+            <p class="placeholder-text">Search for an anime to see results.</p>
+        </section>
+
+        <section id="videoPlayerSection" class="video-player-container" style="display: none;">
+            <h2 id="videoTitle"></h2>
+            <div id="playerWrapper">
+                <p>Loading player...</p>
+            </div>
+            <div id="episodeList">
+                 <h3>Episodes</h3>
+                 <ul class="episodes">
+                    </ul>
+            </div>
+            <button id="closePlayerButton">Close Player</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> My Anime Hub. For personal use only.</p>
+            <p>Disclaimer: This site interfaces with external APIs. Content availability and legality depend on the source.</p>
+        </div>
+    </footer>
+
+    <div class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
